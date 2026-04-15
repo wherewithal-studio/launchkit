@@ -1,0 +1,11 @@
+{
+  "name": "launchkit",
+  "version": "0.1.0",
+  "description": "Launchkit — Launch platform and documentation site",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Placeholder build'"
+  },
+  "devDependencies": {},
+  "keywords": []
+}

@@ -1,0 +1,9 @@
+{
+  "name": "launchkit",
+  "type": "javascript",
+  "main": "public/index.html",
+  "pages_build_output_dir": "public",
+  "build": {
+    "command": "npm run build"
+  }
+}
