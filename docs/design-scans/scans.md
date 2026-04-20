@@ -4,6 +4,8 @@ All nightly design scans for Launchkit (Product Launch Orchestration). Scans are
 
 ## Latest Scans
 
+- [2026-04-20](2026-04-20-launchkit.md) — No changes · Cold-start P1 (6th cycle) · Pre-commit CONFIRMED MISSING (6th cycle)
+- [2026-04-19](2026-04-19-launchkit.md) — No changes · Cold-start P1 (5th cycle) · Pre-commit CONFIRMED MISSING (5th cycle, only project without hook)
 - [2026-04-18](2026-04-18-launchkit.md) — **Inline button P0 RESOLVED** (4df33aa) · Pre-commit CONFIRMED MISSING (filesystem check)
 - [2026-04-17](2026-04-17-launchkit.md) — No changes · Inline button P0 (2nd cycle) · Pre-commit still only outlier
 - [2026-04-16](2026-04-16-launchkit.md) — Class sizes fixed (0a38536) · NEW P0: inline "Design Scan" button at 0.65rem (missed by fix) · Pre-commit still not deployed (only outlier)
@@ -15,6 +17,6 @@ All nightly design scans for Launchkit (Product Launch Orchestration). Scans are
 **Project**: Launchkit  
 **Venture stage**: Build  
 **Inversion layer**: Infrastructure (product launch orchestration — narrative + visual identity)  
-**Latest scan**: [2026-04-16](2026-04-16-launchkit.md)
+**Latest scan**: [2026-04-19](2026-04-19-launchkit.md)
 
 [← Back to all scans](index.md)
