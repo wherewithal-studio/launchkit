@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Scan — 2026-04-15</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a12;
+      --surface: #111119;
+      --surface-2: #16161f;
+      --border: rgba(255,255,255,0.08);
+      --border-light: rgba(255,255,255,0.14);
+      --text: #d4d4d4;
+      --text-high: #efefef;
+      --text-dim: #9494a8;
+      --text-muted: #606070;
+      --accent: #f97316;
+      --font-score: 'Bebas Neue', 'Impact', sans-serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .header {
+      padding: 2rem 2.5rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .breadcrumb {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+    .breadcrumb a { color: var(--accent); text-decoration: none; opacity: 0.85; }
+    .title {
+      font-family: var(--font-score);
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+      line-height: 1.05;
+      margin-bottom: 0.25rem;
+    }
+    .date-line {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    .meta-strip {
+      display: flex;
+      gap: 2rem;
+      padding: 1rem 2.5rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+      flex-wrap: wrap;
+    }
+    .meta-item { display: flex; flex-direction: column; gap: 0.2rem; }
+    .meta-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+    }
+    .meta-value {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+    .meta-value.grade { color: var(--accent); font-size: 1rem; }
+    .meta-value.p0-clean { color: #4ade80; }
+    .meta-value.p0-open  { color: #f87171; }
+
+    .content {
+      max-width: 860px;
+      padding: 2rem 2.5rem 5rem;
+    }
+
+    h2 { font-family: var(--font-score); font-size: 1.3rem; font-weight: 400; letter-spacing: 0.02em; color: var(--accent); margin: 2rem 0 0.6rem; }
+    h3 { font-family: var(--font-mono); font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); margin: 1.25rem 0 0.5rem; }
+    h4 { font-size: 0.95rem; color: var(--text); margin: 1rem 0 0.35rem; }
+    p  { color: var(--text-dim); font-size: 0.9rem; line-height: 1.7; margin: 0.5rem 0; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+    ul { list-style: none; padding: 0; margin: 0.5rem 0; }
+    li { color: var(--text-dim); font-size: 0.88rem; line-height: 1.6; padding: 0.15rem 0 0.15rem 1rem; position: relative; }
+    li::before { content: "·"; position: absolute; left: 0; color: var(--text-muted); }
+    strong { color: var(--text); font-weight: 600; }
+    em { color: var(--text-dim); font-style: italic; }
+    code {
+      font-family: var(--font-mono);
+      font-size: 0.8em;
+      background: var(--surface-2);
+      color: var(--accent);
+      padding: 0.1em 0.4em;
+      border-radius: 3px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin: 0.75rem 0 1.25rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-dim);
+    }
+    th { color: var(--text-muted); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 400; }
+    tr:hover td { background: var(--surface); }
+
+    .footer {
+      padding: 1.5rem 2.5rem;
+      border-top: 1px solid var(--border);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="breadcrumb">
+    <a href="/design-scans">Design Scans</a> / Venture
+  </div>
+  <div class="title">Design Scan</div>
+  <div class="date-line">2026-04-15</div>
+</div>
+
+<div class="meta-strip">
+  <div class="meta-item">
+    <div class="meta-label">Scan Date</div>
+    <div class="meta-value">2026-04-15</div>
+  </div>
+  
+  
+  
+</div>
+
+<div class="content">
+<h2>Launchkit — Design Scan 2026-04-15</h2>
+<p><strong>Date</strong>: 2026-04-15  </p>
+<p><strong>Venture stage</strong>: Build  </p>
+<p><strong>Inversion layer</strong>: Infrastructure (product launch orchestration — narrative + visual identity)  </p>
+<p><strong>Files scanned</strong>: launchkit-summary.html (first direct file read in scan history)  </p>
+<p><strong>Changes since last scan</strong>: Commit <code>a6ed71c</code> standardized breadcrumb nav; stage now Build.</p>
+<hr>
+<h3>Accessibility</h3>
+<h4>Font Sizes</h4>
+<p><strong>P0 — First direct scan confirms assumed P0:</strong></p>
+<ul>
+<li><code>.topbar-stage</code>: <code>0.52rem</code> (8.3px) — below even the <code>0.55rem</code> used in the shared template. Launchkit uses a newer venture page variant that copies the badge class but sets a slightly smaller size. This is the lowest topbar badge size in the portfolio.</li>
+<li><code>section-label</code>: <code>11px</code> — at the practical minimum. Acceptable.</li>
+<li><code>.road-stage .stage-outcome</code> equivalent (line 159): <code>10px</code> — below floor. This appears to be a small detail caption under roadmap stage cards.</li>
+<li><code>.road-stage .stage-name</code>: <code>12px</code> — acceptable.</li>
+</ul>
+<p><strong>Cross-portfolio note</strong>: Launchkit's <code>0.52rem</code> topbar badge suggests the newer venture page template variant is drifting to even smaller sizes than the shared template baseline.</p>
+<h4>Contrast &amp; Color</h4>
+<ul>
+<li>Accent: green <code>#22c55e</code> — high contrast on dark. No concerns.</li>
+<li><code>var(--text-muted)</code>: standard floor verification needed.</li>
+</ul>
+<h4>Semantic Markup</h4>
+<ul>
+<li>Hero-first layout with 52px sticky topbar — compliant with architecture standard.</li>
+<li>No section tabs visible in Launchkit's layout — it uses a single scrolling content page structure. ARIA tab gap from the shared template does not apply here.</li>
+<li>Standard heading hierarchy: h1 → h2 → content. No issues.</li>
+</ul>
+<hr>
+<h3>UX Patterns</h3>
+<h4>Cold-Start Narrative</h4>
+<p><strong>Adequate.</strong> The tagline &quot;Positioning, messaging, visual identity. Launch with a coherent narrative.&quot; is concise and benefit-focused. The kicker gives context about what &quot;coherent narrative&quot; means in practice.</p>
+<p>However, Launchkit at Build stage could be clearer about what it <em>outputs</em> — the tagline describes the inputs/components but not the deliverable. A user arriving cold wouldn't immediately understand whether Launchkit is a tool, a service, a template system, or something else.</p>
+<p><strong>Recommendation</strong>: Add a clarifying sentence about the output format: e.g., &quot;Launchkit produces a brand narrative package — one brief, zero ambiguity about what you're launching and why.&quot;</p>
+<h4>Architecture Compliance</h4>
+<p>Hero-first layout with 52px sticky topbar. Compliant with the venture page standard. No section submenu — appropriate for a product still defining its surface structure.</p>
+<hr>
+<h3>CLI Compliance</h3>
+<p>Launchkit is at Build stage; CLI development not yet begun. No audit applicable.</p>
+<hr>
+<h3>Security</h3>
+<ul>
+<li>No hardcoded secrets in scanned HTML.</li>
+<li>Pre-commit hook: unverified. Should be deployed before active development.</li>
+</ul>
+<hr>
+<h3>Deployment</h3>
+<p>At Build stage; no active product deployment. Internal summary page served via worker.</p>
+<hr>
+<h3>Recommendations</h3>
+<h4>P0 — Accessibility Violations</h4>
+<p>1. <strong>Topbar badge font size</strong>: <code>.topbar-stage</code> at <code>0.52rem</code> is below even the floor used in the shared template (<code>0.55rem</code>). Raise to <code>0.7rem</code> minimum. This is worse than the cross-portfolio P0.</p>
+<p>2. <strong>Roadmap stage detail text</strong>: <code>10px</code> font on roadmap card detail/outcome text — below practical minimum. Raise to <code>11px</code>+.</p>
+<h4>P1 — UX &amp; Feedback</h4>
+<p>3. <strong>Cold-start output clarity</strong>: Add a sentence describing what Launchkit <em>produces</em> (the deliverable), not just what it contains. Users need to know if this is a tool, package, service, or template.</p>
+<h4>P2 — Debt &amp; Improvements</h4>
+<p>4. <strong>Pre-commit hook</strong>: Deploy <code>.githooks/pre-commit</code> before active development.</p>
+<hr>
+<h3>Inspiration Applied</h3>
+<ul>
+<li><strong>Cold-start patterns</strong>: Launchkit's tagline is on-brand but output-ambiguous. The Huntr model (clear &quot;what it does, what you get&quot;) is the target.</li>
+<li><strong>Transparency</strong>: Launchkit's whole value is helping ventures communicate clearly — the summary page should exemplify that clarity.</li>
+</ul>
+<hr>
+<h3>Carried Forward</h3>
+<p><strong>From Q1 2026 (2026-03-30)</strong>: No issues found — passing. Font size and pre-commit hook now confirmed as first-scan findings.</p>
+<p><strong>NEW this scan (first direct read)</strong>:</p>
+<ul>
+<li>Topbar badge <code>0.52rem</code> P0 — New finding.</li>
+<li>Roadmap detail <code>10px</code> P0 — New finding.</li>
+<li>Cold-start output clarity P1 — New finding.</li>
+<li>Pre-commit hook P2 — New finding.</li>
+</ul>
+</div>
+
+<div class="footer">
+  Generated from docs/design-scans/2026-04-15-venture.md
+  · WS-design-scan
+</div>
+
+</body>
+</html>

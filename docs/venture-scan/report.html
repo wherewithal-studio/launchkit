@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Launchkit — Venture Scan V2 · 2026-04-21</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0a0c;color:#e8e8ec;line-height:1.6;padding:2rem;font-size:0.95rem}
+main{max-width:980px;margin:0 auto}
+h1{font-size:2.2rem;color:#fff;margin-bottom:.4rem;letter-spacing:-0.02em}
+h2{font-size:1.35rem;color:#fff;margin:2.8rem 0 .8rem;padding-bottom:.4rem;border-bottom:1px solid #2a2a33}
+h3{font-size:1rem;color:#d8d8e0;margin:1.4rem 0 .5rem;font-weight:600}
+p,li{color:#c4c4cc;margin-bottom:.6rem;font-size:.92rem}
+ul,ol{padding-left:1.4rem;margin-bottom:.6rem}
+code,.mono{font-family:'SF Mono',Menlo,monospace;background:#16161c;color:#e0c89a;padding:.1rem .35rem;border-radius:3px;font-size:.82rem}
+.meta{color:#8a8a95;font-size:.82rem;margin-bottom:1.4rem}
+.card{background:#13131a;border:1px solid #24242e;border-radius:8px;padding:1.1rem 1.3rem;margin:.8rem 0}
+.p0{border-left:3px solid #ff6b7a}
+.p1{border-left:3px solid #ffb05a}
+.p2{border-left:3px solid #7a9aff}
+.pill{display:inline-block;font-size:.72rem;padding:.15rem .5rem;border-radius:10px;background:#24242e;color:#b4b4bc;margin-right:.4rem;letter-spacing:.05em;text-transform:uppercase;vertical-align:middle}
+.pill.p0{background:#4a1a22;color:#ff9aa6;border-left:none}
+.pill.p1{background:#4a3318;color:#ffc89a;border-left:none}
+.pill.p2{background:#1c2a4a;color:#9ab4ff;border-left:none}
+.pill.ok{background:#1a3a22;color:#86efac;border-left:none}
+table{width:100%;border-collapse:collapse;margin:.8rem 0;font-size:.85rem}
+th,td{text-align:left;padding:.5rem .6rem;border-bottom:1px solid #24242e;vertical-align:top}
+th{color:#d8d8e0;font-weight:600;background:#16161c}
+.mock{background:#0d0d12;border:1px solid #24242e;border-radius:8px;padding:1.4rem;margin:.8rem 0;font-size:.85rem;overflow:hidden}
+.tag{font-size:.68rem;color:#8a8a95;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.4rem;display:block;margin-top:.6rem}
+a{color:#9ab4ff}
+strong{color:#e8e8ec}
+.section-note{background:#16161c;border-radius:6px;padding:.7rem 1rem;margin:.5rem 0;font-size:.85rem;color:#9a9aaa;border-left:2px solid #3a3a4a}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:.8rem 0}
+@media(max-width:640px){.two-col{grid-template-columns:1fr}}
+.label-sm{font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;color:#7a7a8a;display:block;margin-bottom:.25rem}
+.inline-badge{display:inline-block;font-size:.7rem;padding:.1rem .4rem;border-radius:4px;background:#24242e;color:#8a8a95;margin-left:.3rem;vertical-align:middle;letter-spacing:.04em;text-transform:uppercase}
+hr{border:none;border-top:1px solid #1e1e28;margin:1.6rem 0}
+.toc{background:#13131a;border:1px solid #24242e;border-radius:8px;padding:1rem 1.3rem;margin:1.4rem 0}
+.toc ol{counter-reset:toc;list-style:none;padding:0}
+.toc li{padding:.2rem 0;font-size:.88rem}
+.toc li::before{counter-increment:toc;content:counter(toc)". ";color:#7a7a8a;margin-right:.3rem}
+.toc a{color:#b4b4cc;text-decoration:none}
+.toc a:hover{color:#fff}
+</style>
+</head>
+<body>
+<main>
+
+<h1>Launchkit — Venture Scan V2</h1>
+<div class="meta">2026-04-21 &nbsp;·&nbsp; Wherewithal Ventures &nbsp;·&nbsp; slug: launchkit &nbsp;·&nbsp; prior scan: 2026-04-20 &nbsp;·&nbsp; stage: Build</div>
+
+<div class="toc">
+  <div class="label-sm">Contents</div>
+  <ol>
+    <li><a href="#s1">Executive Summary</a></li>
+    <li><a href="#s2">Product Brief</a></li>
+    <li><a href="#s3">Security Flags</a></li>
+    <li><a href="#s4">Inspiration Vectors</a></li>
+    <li><a href="#s5">Research References</a></li>
+    <li><a href="#s6">Emotional Arc</a></li>
+    <li><a href="#s7">Journey Map</a></li>
+    <li><a href="#s8">Visual Design Possibilities</a></li>
+    <li><a href="#s9">Design Weight Analysis</a></li>
+    <li><a href="#s10">Interaction Design &amp; Mobile</a></li>
+    <li><a href="#s11">System Consistency</a></li>
+    <li><a href="#s12">Accessibility Audit</a></li>
+    <li><a href="#s13">Recommended Next Steps</a></li>
+  </ol>
+</div>
+
+<h2 id="s1">1. Executive Summary</h2>
+
+<div class="card p0">
+  <span class="pill p0">P0 — STRUCTURAL</span> <strong>Launchkit has no product yet.</strong> The deployed <code>public/index.html</code> is 56 lines: one headline, one sentence, "Content coming soon." There is no information architecture, no navigation, no content, no component system. This scan functions as a design brief and capability roadmap, not an audit of existing work.
+</div>
+
+<div class="card p1">
+  <span class="pill p1">P1 — CARRIED 7th cycle</span> <strong>Cold-start identity undefined.</strong> The product has not decided what it is: (a) a marketing launch-page hub, (b) an internal launch checklist and SOP system, or (c) a brand documentation portal. Without that decision, no design work can be validated.
+</div>
+
+<div class="card p1">
+  <span class="pill p1">P1 — CARRIED 7th cycle</span> <strong>Output clarity still missing.</strong> No surface tells a visitor what Launchkit produces. Prior recommendation — "Launchkit produces a brand narrative package — one brief, one visual system, zero ambiguity" — remains unimplemented.
+</div>
+
+<p><strong>Killer feature:</strong> The shareable brand brief URL. If <code>launchkit.wherewithal.studio/dodek</code> rendered a complete, public-facing brand package — positioning, colors, type, copy — that single page would simultaneously be the product demo, the onboarding artifact, the press kit, and the design spec. Everything else is secondary to building that.</p>
+
+<p><strong>Single strategic recommendation:</strong> Ship a live preview of what a completed Launchkit package looks like, using DODEK or PAM as the example. That preview is the landing page, the product demo, and the trust signal simultaneously. Build it before building any configuration UI.</p>
+
+<h2 id="s2">2. Product Brief</h2>
+
+<div class="card">
+  <div class="label-sm">Product purpose</div>
+  <p>Launchkit is the GTM operating system for Wherewithal ventures. It consolidates positioning, messaging, and visual identity so that every venture ships with a consistent, deployable brand narrative rather than a folder of unresolved decisions.</p>
+
+  <div class="label-sm" style="margin-top:1rem">Business model signal</div>
+  <p>Internal infrastructure and portfolio tooling. Business value is indirect: Launchkit compresses time-to-proof for every venture, which validates the portfolio thesis. May eventually externalize as a productized service for founders outside Wherewithal.</p>
+
+  <div class="label-sm" style="margin-top:1rem">Primary persona</div>
+  <p><strong>Founder-Operator building a new venture inside Wherewithal.</strong> Needs to go from "concept approved" to "landing page live with correct positioning" in one session. Understands the thesis but hasn't internalized every venture's voice. Needs a system that makes decisions, not a blank canvas.</p>
+
+  <div class="label-sm" style="margin-top:1rem">Secondary persona</div>
+  <p><strong>External partner or advisor reviewing a venture's positioning.</strong> Needs to read a brand narrative package without diving into Notion or a repo. A shareable, self-contained brief page would serve them with no onboarding required.</p>
+
+  <div class="label-sm" style="margin-top:1rem">Success frame</div>
+  <p>Primary: Founder-Operator opens Launchkit, selects a venture, and has an exportable brand package (hero copy, color system, type system, positioning statement) in under 20 minutes without opening Figma or a blank doc. Secondary: Advisor opens a shared link and reads the venture's brand package in under 2 minutes.</p>
+
+  <div class="label-sm" style="margin-top:1rem">Competitive positioning</div>
+  <p>Not competing with Figma, Notion, or Webflow. Competing with the chaos of a shared Google Drive folder and a founder doing positioning from memory at 11pm before a launch.</p>
+
+  <div class="label-sm" style="margin-top:1rem">Known constraints</div>
+  <p>Cloudflare Pages static site. No server-side state. Three font families: Bebas Neue, Barlow Condensed, JetBrains Mono. Build stage — no production users. Prior P0: inline button at 0.65rem (not found in current index.html — likely in infrastructure/public venture-summary page, not launchkit repo itself).</p>
+</div>
+
+<h2 id="s3">3. Security Flags</h2>
+
+<div class="card p1">
+  <span class="pill p1">P2 — CARRIED 7th cycle — CONFIRMED MISSING</span> <strong>Pre-commit hook absent.</strong> <code>launchkit/.git/hooks/</code> contains only sample hooks. Launchkit is the only Wherewithal project without an active secrets-scanning pre-commit hook. No hardcoded secrets found in current source (risk is low while product is a placeholder), but the hook must be in place before any real credentials touch the repo.
+</div>
+<p style="font-size:.85rem;color:#8a8a95;margin-top:.4rem">No other security findings. No hardcoded credentials, XSS vectors, or auth bypass surfaces exist — the product has no dynamic behavior. Deploy pre-commit hook before adding any API keys or worker configuration.</p>
+
+<h2 id="s4">4. Inspiration Vectors</h2>
+
+<h3>Refine Vector 1 — The Package Preview as Landing Page</h3>
+<div class="section-note">Stay within Wherewithal dark design language but make the "launch package" the first thing seen — not an abstract concept but a live, readable artifact.</div>
+<div class="mock">
+  <div style="background:#0a0a0e;border-radius:8px;padding:1.8rem">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;padding-bottom:.8rem;border-bottom:1px solid #2a2a33">
+      <span style="font-family:Georgia,serif;font-size:1rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;font-weight:400">LAUNCHKIT</span>
+      <span style="font-size:.75rem;color:#7a7a8a;letter-spacing:.06em;text-transform:uppercase">Build Stage</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 2fr;gap:2rem">
+      <div>
+        <div style="font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#7a7a8a;margin-bottom:.8rem">Ventures</div>
+        <div style="display:flex;flex-direction:column;gap:.3rem">
+          <div style="padding:.5rem .75rem;background:#1e1e28;border-radius:4px;font-size:.82rem;color:#fff;border-left:2px solid #7a9aff">DODEK</div>
+          <div style="padding:.5rem .75rem;background:#13131a;border-radius:4px;font-size:.82rem;color:#9a9aaa">PAM</div>
+          <div style="padding:.5rem .75rem;background:#13131a;border-radius:4px;font-size:.82rem;color:#9a9aaa">TOTEM</div>
+          <div style="padding:.5rem .75rem;background:#13131a;border-radius:4px;font-size:.82rem;color:#9a9aaa">HUNTR</div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#7a7a8a;margin-bottom:.8rem">DODEK — Launch Package</div>
+        <div style="background:#13131a;border:1px solid #24242e;border-radius:6px;padding:1rem;margin-bottom:.8rem">
+          <div style="font-size:.65rem;color:#7a7a8a;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem">Positioning statement</div>
+          <div style="font-size:.9rem;color:#e8e8ec;line-height:1.4">DODEK composes music from structured harmonic rules, not prompts — giving composers control that AI tools don't.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
+          <div style="background:#13131a;border:1px solid #24242e;border-radius:6px;padding:.8rem">
+            <div style="font-size:.65rem;color:#7a7a8a;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem">Primary color</div>
+            <div style="display:flex;align-items:center;gap:.5rem"><div style="width:20px;height:20px;border-radius:3px;background:#7a6af0"></div><span style="font-family:monospace;font-size:.78rem;color:#c4c4cc">#7a6af0</span></div>
+          </div>
+          <div style="background:#13131a;border:1px solid #24242e;border-radius:6px;padding:.8rem">
+            <div style="font-size:.65rem;color:#7a7a8a;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem">Type system</div>
+            <div style="font-size:.78rem;color:#c4c4cc">Bebas Neue · Barlow Condensed · Mono</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tag">Vector 1: Package-first layout — no configuration required to see value</div>
+</div>
+
+<h3>Refine Vector 2 — The Brief Card as Hero</h3>
+<div class="section-note">Rather than a dashboard metaphor, surface a single venture's launch brief as a beautiful document card. Shows the product's output format immediately on first load.</div>
+<div class="mock">
+  <div style="background:#0a0a0e;min-height:260px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center">
+    <div style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:#7a7a8a;margin-bottom:1rem">Launchkit</div>
+    <div style="font-size:2.2rem;color:#fff;font-family:Georgia,serif;font-weight:400;margin-bottom:.6rem;line-height:1.1">One brief.<br>One system.<br>Zero ambiguity.</div>
+    <div style="font-size:.88rem;color:#8a8a95;max-width:380px;margin-bottom:1.8rem">Brand narrative packages for Wherewithal ventures — positioning, color, type, and copy, ready to ship.</div>
+    <div style="display:flex;gap:.8rem;justify-content:center">
+      <div style="padding:.55rem 1.2rem;background:#7a9aff;color:#0a0a0e;border-radius:5px;font-size:.82rem;font-weight:600">View a sample package</div>
+      <div style="padding:.55rem 1.2rem;background:#1e1e28;color:#e8e8ec;border-radius:5px;font-size:.82rem;border:1px solid #2a2a33">How it works</div>
+    </div>
+  </div>
+  <div class="tag">Vector 2: Editorial hero — statement + single CTA to a live sample package</div>
+</div>
+
+<h3>Refine Vector 3 — Launch Readiness as Progress Signal</h3>
+<div class="section-note">If Launchkit is partially an internal launch SOP, showing a venture's "readiness score" gives the Founder-Operator an instant north star and a reason to return.</div>
+<div class="mock">
+  <div style="background:#0a0a0e;border-radius:8px;padding:1.4rem">
+    <div style="font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#7a7a8a;margin-bottom:1rem">DODEK — Launch Readiness</div>
+    <div style="display:flex;gap:.3rem;margin-bottom:1rem">
+      <div style="flex:1;height:4px;border-radius:2px;background:#4ade80"></div>
+      <div style="flex:1;height:4px;border-radius:2px;background:#4ade80"></div>
+      <div style="flex:1;height:4px;border-radius:2px;background:#4ade80"></div>
+      <div style="flex:1;height:4px;border-radius:2px;background:#ffb05a"></div>
+      <div style="flex:1;height:4px;border-radius:2px;background:#2a2a33"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:.5rem">
+      <div style="display:flex;align-items:center;gap:.6rem;font-size:.82rem"><span style="color:#4ade80">&#x2713;</span><span style="color:#c4c4cc">Positioning statement</span></div>
+      <div style="display:flex;align-items:center;gap:.6rem;font-size:.82rem"><span style="color:#4ade80">&#x2713;</span><span style="color:#c4c4cc">Color system defined</span></div>
+      <div style="display:flex;align-items:center;gap:.6rem;font-size:.82rem"><span style="color:#4ade80">&#x2713;</span><span style="color:#c4c4cc">Type system defined</span></div>
+      <div style="display:flex;align-items:center;gap:.6rem;font-size:.82rem"><span style="color:#ffb05a">&#x25cc;</span><span style="color:#c4c4cc">Hero copy — in progress</span></div>
+      <div style="display:flex;align-items:center;gap:.6rem;font-size:.82rem"><span style="color:#3a3a48">&#x25cb;</span><span style="color:#7a7a8a">OG metadata</span></div>
+    </div>
+  </div>
+  <div class="tag">Vector 3: Readiness checklist — shows progress, motivates completion</div>
+</div>
+
+<h3>Refine Vector 4 — The Token Browser</h3>
+<div class="section-note">For the visual identity layer, a token browser showing live color swatches, type specimens, and spacing values turns Launchkit into a living style guide referenced daily.</div>
+<div class="mock">
+  <div style="background:#0a0a0e;padding:1.4rem;border-radius:8px">
+    <div style="font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#7a7a8a;margin-bottom:1rem">DODEK — Design Tokens</div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:.5rem;margin-bottom:1rem">
+      <div style="text-align:center"><div style="height:32px;border-radius:4px;background:#7a6af0;margin-bottom:.3rem"></div><div style="font-size:.65rem;color:#7a7a8a;font-family:monospace">primary</div></div>
+      <div style="text-align:center"><div style="height:32px;border-radius:4px;background:#a896ff;margin-bottom:.3rem"></div><div style="font-size:.65rem;color:#7a7a8a;font-family:monospace">accent</div></div>
+      <div style="text-align:center"><div style="height:32px;border-radius:4px;background:#0d0d14;border:1px solid #2a2a33;margin-bottom:.3rem"></div><div style="font-size:.65rem;color:#7a7a8a;font-family:monospace">surface</div></div>
+      <div style="text-align:center"><div style="height:32px;border-radius:4px;background:#e8e8ec;margin-bottom:.3rem"></div><div style="font-size:.65rem;color:#7a7a8a;font-family:monospace">text-1</div></div>
+      <div style="text-align:center"><div style="height:32px;border-radius:4px;background:#8a8a95;margin-bottom:.3rem"></div><div style="font-size:.65rem;color:#7a7a8a;font-family:monospace">text-2</div></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:.4rem">
+      <div style="display:flex;align-items:baseline;gap:.8rem"><span style="font-family:'Courier New',monospace;font-size:.72rem;color:#7a7a8a;min-width:72px">display</span><span style="font-size:1.6rem;color:#fff;font-family:Georgia,serif;font-weight:400;line-height:1">DODEK</span></div>
+      <div style="display:flex;align-items:baseline;gap:.8rem"><span style="font-family:'Courier New',monospace;font-size:.72rem;color:#7a7a8a;min-width:72px">label</span><span style="font-size:.82rem;color:#c4c4cc;letter-spacing:.08em;text-transform:uppercase">Section Label</span></div>
+      <div style="display:flex;align-items:baseline;gap:.8rem"><span style="font-family:'Courier New',monospace;font-size:.72rem;color:#7a7a8a;min-width:72px">mono</span><span style="font-size:.82rem;color:#e0c89a;font-family:'Courier New',monospace">--color-primary: #7a6af0</span></div>
+    </div>
+  </div>
+  <div class="tag">Vector 4: Live token browser — design system as a browsable artifact</div>
+</div>
+
+<h3>Radical Vector 5 — "What If Launchkit Was a Compiler?"</h3>
+<div class="section-note">Counter-intuitive: position Launchkit as a CLI / build-step that compiles brand tokens into deployable assets. The UI is a terminal-style interface showing the compilation chain. Directly expresses Inversion #4.</div>
+<div class="mock">
+  <div style="background:#050508;border-radius:8px;padding:1.4rem;font-family:'Courier New',Courier,monospace">
+    <div style="font-size:.72rem;color:#4ade80;margin-bottom:1rem">$ launchkit build dodek --output ./dist/brand</div>
+    <div style="font-size:.72rem;color:#7a7a8a;margin-bottom:.3rem">&#x2713;&nbsp; positioning.md &rarr; positioning-statement.html</div>
+    <div style="font-size:.72rem;color:#7a7a8a;margin-bottom:.3rem">&#x2713;&nbsp; tokens.json &rarr; css-variables.css</div>
+    <div style="font-size:.72rem;color:#7a7a8a;margin-bottom:.3rem">&#x2713;&nbsp; copy-bank.md &rarr; og-meta.html</div>
+    <div style="font-size:.72rem;color:#ffb05a;margin-bottom:.3rem">&#x26a0;&nbsp; hero-copy: draft mode — review before deploy</div>
+    <div style="font-size:.72rem;color:#7a7a8a;margin-bottom:1rem">&#x2713;&nbsp; Built 4/5 artifacts in 1.2s</div>
+    <div style="font-size:.72rem;color:#9ab4ff">&rarr;&nbsp; Output: /dist/brand/dodek/ (4 files, 12kb)</div>
+  </div>
+  <div class="tag">Vector 5: Compiler metaphor — Launchkit as a build step for brand, not a GUI</div>
+</div>
+
+<h3>Radical Vector 6 — "What If Launchkit Was a Single Shareable URL?"</h3>
+<div class="section-note">The entire product output is a public, password-free URL: launchkit.wherewithal.studio/dodek. That URL IS the brand brief. Launchkit's UI is the editor; the output URL is the product. Directly expresses the "You Are an API" inversion.</div>
+<div class="mock">
+  <div style="background:#0a0a0e;border-radius:8px;overflow:hidden">
+    <div style="background:#13131a;padding:.6rem 1rem;border-bottom:1px solid #2a2a33;display:flex;align-items:center;gap:.6rem">
+      <div style="width:8px;height:8px;border-radius:50%;background:#ff6b7a"></div>
+      <div style="width:8px;height:8px;border-radius:50%;background:#ffb05a"></div>
+      <div style="width:8px;height:8px;border-radius:50%;background:#4ade80"></div>
+      <div style="flex:1;background:#0a0a0e;border-radius:4px;padding:.2rem .6rem;font-size:.7rem;color:#7a7a8a;font-family:monospace;text-align:center">launchkit.wherewithal.studio/dodek</div>
+    </div>
+    <div style="padding:1.8rem;text-align:center">
+      <div style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:#7a6af0;margin-bottom:.5rem">DODEK — Brand Brief</div>
+      <div style="font-size:1.8rem;color:#fff;font-family:Georgia,serif;font-weight:400;margin-bottom:.5rem">Compose Without Compromise</div>
+      <div style="font-size:.85rem;color:#8a8a95;max-width:320px;margin:0 auto .8rem">Harmonic rule systems for AI composition. Control that prompt-based tools cannot give you.</div>
+      <div style="display:flex;justify-content:center;gap:.5rem;margin-top:1rem">
+        <div style="width:24px;height:24px;border-radius:3px;background:#7a6af0"></div>
+        <div style="width:24px;height:24px;border-radius:3px;background:#a896ff"></div>
+        <div style="width:24px;height:24px;border-radius:3px;background:#0d0d14;border:1px solid #3a3a4a"></div>
+        <div style="width:24px;height:24px;border-radius:3px;background:#e8e8ec"></div>
+      </div>
+    </div>
+  </div>
+  <div class="tag">Vector 6: Shareable URL as product — the brand brief IS the deployed page</div>
+</div>
+
+<h3>Radical Vector 7 — "What If Launchkit Was an Audit Tool?"</h3>
+<div class="section-note">Invert the creation flow entirely. Launchkit's primary job is scanning existing venture pages and flagging brand drift — inconsistent copy, wrong colors, missing OG tags. Creation is secondary to verification.</div>
+<div class="mock">
+  <div style="background:#0a0a0e;border-radius:8px;padding:1.4rem">
+    <div style="font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#7a7a8a;margin-bottom:1rem">Brand Drift — Portfolio Scan</div>
+    <div style="display:flex;flex-direction:column;gap:.5rem">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:.5rem .8rem;background:#13131a;border-radius:5px;border-left:2px solid #4ade80">
+        <span style="font-size:.82rem;color:#e8e8ec">DODEK</span>
+        <span style="font-size:.75rem;color:#4ade80">Brand-aligned</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:.5rem .8rem;background:#13131a;border-radius:5px;border-left:2px solid #ffb05a">
+        <span style="font-size:.82rem;color:#e8e8ec">PAM</span>
+        <span style="font-size:.75rem;color:#ffb05a">2 drift signals</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:.5rem .8rem;background:#13131a;border-radius:5px;border-left:2px solid #ff6b7a">
+        <span style="font-size:.82rem;color:#e8e8ec">TOTEM</span>
+        <span style="font-size:.75rem;color:#ff6b7a">OG tags missing · Wrong accent color</span>
+      </div>
+    </div>
+  </div>
+  <div class="tag">Vector 7: Brand audit dashboard — verification before creation</div>
+</div>
+
+<h2 id="s5">5. Research References</h2>
+
+<h3>Launch Package as Deliverable</h3>
+<table>
+  <thead><tr><th>Name</th><th>Type</th><th>Relevance</th></tr></thead>
+  <tbody>
+    <tr><td>Notion shared pages</td><td><span class="inline-badge">in-category</span></td><td style="font-size:.82rem">Shareable read-only pages as the primary deliverable format — Launchkit package output should follow this pattern.</td></tr>
+    <tr><td>Frontify (Brand.ai)</td><td><span class="inline-badge">in-category</span></td><td style="font-size:.82rem">Brand guidelines as a living web artifact — exactly the format Launchkit packages should take. frontify.com</td></tr>
+    <tr><td>Stripe Press</td><td><span class="inline-badge">out-of-category</span></td><td style="font-size:.82rem">Editorial publishing as a trust signal — a contained, beautiful document page conveys authority without complexity. press.stripe.com</td></tr>
+    <tr><td>Vercel Deploy Previews</td><td><span class="inline-badge">out-of-category</span></td><td style="font-size:.82rem">Preview URL as the primary output artifact — every build produces a shareable, inspectable link. Launchkit packages should work the same way.</td></tr>
+  </tbody>
+</table>
+
+<h3>Configuration and Token Management</h3>
+<table>
+  <thead><tr><th>Name</th><th>Type</th><th>Relevance</th></tr></thead>
+  <tbody>
+    <tr><td>Style Dictionary (Amazon)</td><td><span class="inline-badge">out-of-category</span></td><td style="font-size:.82rem">Design tokens as a build step — the compiler metaphor (Vector 5) is grounded in established tooling. amzn.github.io/style-dictionary</td></tr>
+    <tr><td>Luro</td><td><span class="inline-badge">in-category</span></td><td style="font-size:.82rem">Component and brand token browser with team collaboration — shows what a mature token-browsing UI looks like.</td></tr>
+  </tbody>
+</table>
+
+<h3>Cold-Start Readability</h3>
+<table>
+  <thead><tr><th>Name</th><th>Type</th><th>Relevance</th></tr></thead>
+  <tbody>
+    <tr><td>Linear.app</td><td><span class="inline-badge">out-of-category</span></td><td style="font-size:.82rem">Hero that shows actual UI, not abstract claims. Launchkit should show a real package on the landing page, not a description of one.</td></tr>
+    <tr><td>Pitch.com</td><td><span class="inline-badge">in-category</span></td><td style="font-size:.82rem">GTM tool hero with immediate product preview — template gallery as the landing page. Directly applicable to Launchkit's package-preview concept.</td></tr>
+  </tbody>
+</table>
+
+<h2 id="s6">6. Emotional Arc &amp; Touchpoints</h2>
+
+<h3>Touchpoint Inventory</h3>
+<table>
+  <thead><tr><th>Touchpoint</th><th>Surface</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr><td>Landing page</td><td>launchkit.wherewithal.studio</td><td style="color:#ff9aa6;font-size:.85rem">Placeholder only</td></tr>
+    <tr><td>Venture package page</td><td>/[venture]</td><td style="color:#ff9aa6;font-size:.85rem">Does not exist</td></tr>
+    <tr><td>Token browser</td><td>/[venture]/tokens</td><td style="color:#ff9aa6;font-size:.85rem">Does not exist</td></tr>
+    <tr><td>Launch checklist</td><td>/[venture]/checklist</td><td style="color:#ff9aa6;font-size:.85rem">Does not exist</td></tr>
+    <tr><td>Internal venture summary</td><td>internal.wherewithal.studio/launchkit-summary.html</td><td style="color:#4ade80;font-size:.85rem">Exists</td></tr>
+    <tr><td>OG share card</td><td>Meta tags</td><td style="color:#ff9aa6;font-size:.85rem">Missing entirely</td></tr>
+  </tbody>
+</table>
+
+<h3>Emotional Arc per Persona</h3>
+<div class="two-col">
+  <div class="card">
+    <div class="label-sm">Founder-Operator</div>
+    <p style="font-size:.85rem"><strong>Landing:</strong> Intended — "I understand what this gives me." Actual — "Nothing is here." Complete dead end.</p>
+    <p style="font-size:.85rem"><strong>Package view:</strong> Intended — "I can see and export my brand in one session." Actual — Surface does not exist.</p>
+    <p style="font-size:.85rem"><strong>Checklist:</strong> Intended — "I know what's missing before launch." Actual — Surface does not exist.</p>
+  </div>
+  <div class="card">
+    <div class="label-sm">External Advisor</div>
+    <p style="font-size:.85rem"><strong>Landing:</strong> Intended — "I can see the venture's positioning." Actual — "Content coming soon."</p>
+    <p style="font-size:.85rem"><strong>Package URL:</strong> Intended — "This is a clean, readable brand brief." Actual — Surface does not exist.</p>
+  </div>
+</div>
+
+<h3>Moments That Matter</h3>
+<ol>
+  <li><strong>First load for Founder-Operator.</strong> If the landing page shows a real package in the first 5 seconds, this persona is converted. If it shows "Content coming soon," trust is permanently reset to zero.</li>
+  <li><strong>The export / share moment.</strong> When a founder can copy a URL and send it to an advisor or press contact, Launchkit justifies its existence. This moment doesn't exist yet.</li>
+  <li><strong>The checklist completion signal.</strong> Seeing a venture go from 3/5 to 5/5 on the readiness checklist is intrinsically motivating and would drive return visits.</li>
+</ol>
+
+<h3>Cold Start Problem</h3>
+<p>Currently catastrophic. A new visitor sees one headline and one sentence. The product must immediately answer: what is this, who is it for, and what does a finished output look like? None of those questions are answered.</p>
+
+<h3>Dead Ends</h3>
+<p>The entire product is a dead end. There is no forward path from the landing page. The only available action is leaving.</p>
+
+<h2 id="s7">7. Journey Map</h2>
+
+<h3>Implied but Unserved User Stories</h3>
+<ul>
+  <li>As a Founder-Operator, I want to see my venture's complete brand package so I can make sure all surfaces are consistent. — Not served.</li>
+  <li>As a Founder-Operator, I want a launch readiness checklist so I know what's missing before I go public. — Not served.</li>
+  <li>As an Advisor, I want to open a URL and read a venture's positioning in 2 minutes without logging in. — Not served.</li>
+  <li>As a Founder-Operator, I want to export CSS variables and OG meta tags from the design system. — Not served.</li>
+</ul>
+
+<h3>End-to-End Journey</h3>
+<table>
+  <thead><tr><th>Phase</th><th>Entry point</th><th>What they need</th><th>What they get today</th><th>Gap</th></tr></thead>
+  <tbody>
+    <tr><td>Awareness</td><td>Internal referral, portfolio page</td><td>Understand what the tool does</td><td>One sentence, no demo</td><td>No product description, no example output</td></tr>
+    <tr><td>Consideration</td><td>Landing page</td><td>See a real brand package</td><td>Nothing</td><td>No sample package, no screenshots</td></tr>
+    <tr><td>First use</td><td>None — product doesn't exist</td><td>Select a venture and open their package</td><td>Nothing</td><td>No venture selection, no package view</td></tr>
+    <tr><td>Core task</td><td>—</td><td>Review tokens, copy positioning, export assets</td><td>Nothing</td><td>No token browser, no export mechanism</td></tr>
+    <tr><td>Return</td><td>—</td><td>Check checklist progress, update a token</td><td>Nothing</td><td>No persistent state, no checklist</td></tr>
+    <tr><td>Advocacy</td><td>—</td><td>Share a brand brief URL with advisor or press</td><td>Nothing</td><td>No shareable URLs</td></tr>
+  </tbody>
+</table>
+
+<h3>Vocabulary Audit</h3>
+<table>
+  <thead><tr><th>System term (current)</th><th>User term (better)</th></tr></thead>
+  <tbody>
+    <tr><td>"Launch platform"</td><td>"Brand narrative package"</td></tr>
+    <tr><td>"Documentation site"</td><td>"Brand brief"</td></tr>
+    <tr><td>"Design system"</td><td>"Visual identity"</td></tr>
+    <tr><td>"Venture"</td><td>Acceptable — used consistently across portfolio</td></tr>
+  </tbody>
+</table>
+
+<h2 id="s8">8. Visual Design Possibilities</h2>
+
+<h3>Visual Potential Inventory</h3>
+<p>The design language — dark background, Bebas Neue / Barlow Condensed / JetBrains Mono, accent blues and purples — is a strong foundation. The three-family system creates technical authority hierarchy. The gap is not the language, it's the absence of content to apply it to.</p>
+
+<h3>Typography Possibilities</h3>
+<p>The current h1 at 2.5rem is undersized for a hero. At 4–6rem with tight letter-spacing, the same headline reads as an intentional editorial statement. Barlow Condensed at 0.72rem+ with 0.1em tracking on section labels creates a clear tertiary layer. JetBrains Mono treating positioning statements as "code output" reinforces the compiler metaphor and is tonally consistent with the Wherewithal thesis.</p>
+
+<h3>Color Possibilities</h3>
+<p>Each venture has its own accent. Launchkit's own accent should distinguish it from the ventures it serves — consider a warm metallic like <code>#c8a96e</code> (gold) as the meta-brand color. Carries the connotation of "the kit that holds all the others" without competing with any single venture's palette.</p>
+
+<h3>Spatial Possibilities</h3>
+<p>With minimal current elements, generous spacing (80–120px vertical rhythm) would signal premium quality. The current 2rem body padding is cramped for a hero page. Full-bleed header zone at 80px padding would immediately communicate that this is a considered product.</p>
+
+<h3>The Visual Design Bet</h3>
+<p>Replace the placeholder with a full-viewport hero that shows a real DODEK brand brief card — actual positioning statement, actual color swatches, actual type specimen — rendered in the Launchkit frame. That single change makes the product real without writing a line of application code.</p>
+
+<h3>Technical Integrity Flags</h3>
+<div class="card p1">
+  <span class="pill p1">Missing</span> <strong>No OG / meta tags.</strong> <code>&lt;title&gt;</code> is "Launchkit" — no description, no og:image, no og:title. Any share to Slack, Twitter, or email renders a blank card.
+</div>
+<div class="card p1">
+  <span class="pill p1">Missing</span> <strong>No favicon.</strong> Browser tab shows default browser icon.
+</div>
+<div class="card p2">
+  <span class="pill p2">Note</span> <strong>No 404 page.</strong> Cloudflare Pages default 404 serves for any unknown path.
+</div>
+<div class="card p2">
+  <span class="pill p2">Note</span> Brand fonts not loaded. Landing page uses <code>-apple-system</code> fallback. Acceptable for placeholder; must be addressed before real content ships.
+</div>
+
+<h2 id="s9">9. Design Weight Analysis</h2>
+
+<h3>Design Weight Inventory</h3>
+<p>Currently: one h1 carries 100% of perceptual weight. That weight is wasted — nothing follows. The second sentence ("Content coming soon") actively destroys trust by confirming the product is incomplete.</p>
+
+<h3>Killer Feature</h3>
+<p><strong>The shareable brand brief URL.</strong> <code>launchkit.wherewithal.studio/dodek</code> as a beautiful, complete, public-facing brand package would simultaneously be the product demo, the onboarding artifact, the press kit, and the design spec. That one feature justifies the entire product. It also directly expresses Inversion #4 — brand identity becomes an API endpoint.</p>
+
+<h3>Strategic Alignment</h3>
+<p>Launchkit's inversion is Infrastructure (#4): make the brand system transparent, composable, and shareable rather than locked in Figma files and Notion docs. The current design doesn't express that inversion. A visitor cannot see the thesis in the UI. The shareable URL concept makes the inversion legible.</p>
+
+<h3>Conversion and Trust Signals</h3>
+<p>No trust signals exist. The product has not earned the right to ask for any effort. Before asking a Founder-Operator to configure anything, the product must show them what a completed configuration looks like. The sample package is the trust signal.</p>
+
+<h3>Retention Design</h3>
+<p>No retention hooks. A returning user has no reason to come back because the product state never changes. The checklist model (Vector 3) would fix this: each visit shows measurable progress toward launch-ready brand packages.</p>
+
+<h3>Strategic Gaps (Top 3)</h3>
+<ol>
+  <li><strong>No sample package.</strong> Without a live example of Launchkit's output, no persona can understand the product's value or validate its quality.</li>
+  <li><strong>No shareable URL pattern.</strong> The product's primary distribution mechanism — sending a brand brief to an advisor or press contact — doesn't exist at any layer.</li>
+  <li><strong>No IA decision made.</strong> Is this a browser tool, CLI tool, or shareable document? That decision drives every subsequent design choice and hasn't been made after 7 scan cycles.</li>
+</ol>
+
+<h2 id="s10">10. Interaction Design &amp; Mobile</h2>
+
+<h3>Interaction Model Inventory</h3>
+<p>Current interaction model: none. The page has anchor styling but no actual <code>&lt;a href&gt;</code> elements in the body. The only interaction is page load.</p>
+
+<h3>State Design</h3>
+<table>
+  <thead><tr><th>Interaction</th><th>Loading</th><th>Empty</th><th>Error</th><th>Success</th></tr></thead>
+  <tbody>
+    <tr><td>Page load</td><td>N/A — static</td><td style="color:#ffb05a">Yes — entire page is empty state</td><td style="color:#ff9aa6">No 404 page</td><td>N/A</td></tr>
+    <tr><td>Package view</td><td style="color:#ff9aa6">Not designed</td><td style="color:#ff9aa6">Not designed</td><td style="color:#ff9aa6">Not designed</td><td style="color:#ff9aa6">Not designed</td></tr>
+  </tbody>
+</table>
+
+<h3>Mobile Possibilities</h3>
+<p>The package-as-document format (Vectors 2 and 6) is inherently mobile-friendly — a single-column scrollable document reads well at any viewport. The token browser (Vector 4) needs a card-stack treatment on mobile rather than a grid. The checklist (Vector 3) is excellent on mobile: clear progress bars and tap-to-expand detail.</p>
+
+<h3>Mobile Defects</h3>
+<p>Current <code>public/index.html</code> has no responsive issues because it has almost no layout. The <code>max-width: 1000px</code> container with <code>padding: 2rem</code> renders acceptably at all viewports. No horizontal overflow. No touch target issues — there are no interactive elements.</p>
+
+<h3>The Interaction Design Bet</h3>
+<p>Make the venture selector on the landing page a tap-to-preview interaction: tapping a venture name slides in a preview of their brand brief (right panel on desktop, below on mobile). No page load, no login. That single micro-interaction makes the product feel alive and valuable on first contact.</p>
+
+<h2 id="s11">11. System Consistency</h2>
+
+<h3>Design Token Audit</h3>
+<p>No design tokens are defined in the current codebase. The landing page uses raw hex values inline. The three-family font system (Bebas Neue, Barlow Condensed, JetBrains Mono) is a portfolio standard but not loaded or referenced in any Launchkit file.</p>
+
+<h3>Component Patterns</h3>
+<p>No components exist. Single page, no reusable patterns.</p>
+
+<h3>Voice and Tone</h3>
+<p>Current copy: "Launch platform and documentation site for Wherewithal ventures." and "Content coming soon." Tone is neutral-bureaucratic. The Wherewithal portfolio voice is direct, technical, and thesis-forward. Launchkit's copy should match: "One brief. One system. Zero ambiguity." rather than "documentation site."</p>
+
+<h3>Brand Fidelity</h3>
+<p>Dark background and basic layout are consistent with Wherewithal aesthetic. System font stack, absent brand fonts, and placeholder copy make the page feel like scaffolding rather than a portfolio product. Brand fidelity requires: loading three font families, a Launchkit-specific accent color (distinct from all venture colors), and the real positioning statement.</p>
+
+<h3>Design Debt</h3>
+<ul>
+  <li>All styles inline in a <code>&lt;style&gt;</code> block — no token system. Acceptable now; will need extraction before adding more pages.</li>
+  <li>No CSS custom properties. Raw hex values in all style rules.</li>
+  <li>The three-family font system is a portfolio-wide standard not enforced in any Launchkit file.</li>
+</ul>
+
+<h2 id="s12">12. Accessibility Audit</h2>
+
+<h3>Color Contrast</h3>
+<table>
+  <thead><tr><th>Element</th><th>Foreground</th><th>Background</th><th>Ratio</th><th>Result</th></tr></thead>
+  <tbody>
+    <tr><td>h1 "Launchkit"</td><td>#ffffff</td><td>#0a0a0a</td><td>21:1</td><td style="color:#4ade80">Pass</td></tr>
+    <tr><td>Body paragraph text</td><td>#b0b0b0</td><td>#0a0a0a</td><td>~7.5:1</td><td style="color:#4ade80">Pass</td></tr>
+    <tr><td>Link color</td><td>#7a9aff</td><td>#0a0a0a</td><td>~5.2:1</td><td style="color:#4ade80">Pass</td></tr>
+    <tr><td>Prior P0: inline button 0.65rem</td><td>—</td><td>—</td><td>—</td><td style="color:#ffb05a">Verify location — not in current index.html; check infrastructure/public venture-summary</td></tr>
+  </tbody>
+</table>
+
+<h3>Structural Accessibility</h3>
+<div class="card p1">
+  <span class="pill p1">Missing</span> <strong>No skip navigation link.</strong> Low impact now; required before adding real navigation.
+</div>
+<div class="card p2">
+  <span class="pill p2">Note</span> No <code>&lt;nav&gt;</code>, <code>&lt;header&gt;</code>, or <code>&lt;footer&gt;</code> landmarks. Page uses only <code>&lt;main&gt;</code>. Acceptable for placeholder; will need landmark structure when navigation is added.
+</div>
+<div class="card" style="border-left:2px solid #4ade80">
+  <span class="pill ok">Pass</span> <code>html lang="en"</code> present. No images (no alt text issues). No forms. No animations (no prefers-reduced-motion needed). No interactive elements (no keyboard trap issues).
+</div>
+
+<h3>Font Size</h3>
+<p>Body text 1rem (~16px). h1 2.5rem. All sizes above the 11px practical minimum. <strong>No sub-0.7rem violations in current index.html.</strong> Prior P0 (inline button at 0.65rem) is in the infrastructure/public venture-summary page, not the Launchkit repo itself — verify and fix at source.</p>
+
+<h2 id="s13">13. Recommended Next Steps</h2>
+
+<h3>This Week</h3>
+<ol>
+  <li><strong>Deploy the pre-commit hook.</strong> Run <code>./scripts/deploy-hooks.sh</code> from Launchkit root, or copy from <code>Wherewithal/.githooks/pre-commit</code> and <code>chmod +x</code>. Five minutes. Has been deferred 7 cycles. No secrets are at risk while the product is a placeholder, but the habit must exist before any API keys or worker config touch the repo.</li>
+  <li><strong>Make the IA decision.</strong> Choose one: (a) shareable URL package viewer, (b) internal launch checklist, or (c) brand audit tool. Document in README.md and CLAUDE.md. This gates all other design work. Without it, no design choice can be validated. Recommendation: start with (a) — it's the most visible, the most shareable, and directly expresses Inversion #4.</li>
+  <li><strong>Replace placeholder copy.</strong> Update the body paragraph with the real positioning statement. Suggested: "Brand narrative packages for Wherewithal ventures — positioning, color, type, and copy, ready to ship." Two minutes, no structural work required.</li>
+</ol>
+
+<h3>This Month</h3>
+<ol start="4">
+  <li><strong>Build a static sample package page for DODEK</strong> at <code>public/dodek/index.html</code>. Use Vector 2 or Vector 6 as the template. Show: positioning statement, color swatches, type specimen, and OG meta template as a readable document. This is the product demo, the landing page hero content, and the first real Launchkit artifact simultaneously.</li>
+  <li><strong>Add OG / meta tags to index.html.</strong> Minimum: <code>og:title</code>, <code>og:description</code>, <code>og:image</code> (screenshot of the DODEK sample package), and a favicon. Fifteen minutes; immediately fixes the blank-card share problem.</li>
+  <li><strong>Load the three brand fonts.</strong> Add Google Fonts import for Bebas Neue and Barlow Condensed; web font for JetBrains Mono. Apply to the page. Brings the landing page into Wherewithal portfolio visual standard.</li>
+  <li><strong>Introduce CSS custom properties</strong> for color tokens. Extract the 4–5 hardcoded hex values into <code>:root</code> variables. Ten minutes; makes the page extensible when the sample package is added.</li>
+</ol>
+
+<h3>When You Have Time</h3>
+<ol start="8">
+  <li><strong>Build the venture selector.</strong> Once the DODEK sample package exists, add a minimal nav — venture names that load their package views. Start with 2–3 ventures. This converts the product from a single page into a working tool.</li>
+  <li><strong>Add the launch readiness checklist.</strong> Even as a static HTML checklist per venture, this gives the Founder-Operator persona a reason to return. Make it stateful via localStorage before adding any server-side persistence.</li>
+  <li><strong>Evaluate the compiler metaphor</strong> (Vector 5) as a CLI companion. If Launchkit is already generating CSS variables and OG meta templates, a <code>launchkit export --venture dodek</code> command outputting deployable assets is a natural extension of the product thesis and would differentiate Launchkit from every GUI-only brand tool.</li>
+</ol>
+
+<hr>
+<div class="meta" style="margin-top:1.6rem">Launchkit V2 Venture Scan &nbsp;·&nbsp; 2026-04-21 &nbsp;·&nbsp; Wherewithal Ventures &nbsp;·&nbsp; claude-sonnet-4-6</div>
+
+</main>
+</body>
+</html>

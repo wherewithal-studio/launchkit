@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Scan — 2026-04-17</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a12;
+      --surface: #111119;
+      --surface-2: #16161f;
+      --border: rgba(255,255,255,0.08);
+      --border-light: rgba(255,255,255,0.14);
+      --text: #d4d4d4;
+      --text-high: #efefef;
+      --text-dim: #9494a8;
+      --text-muted: #606070;
+      --accent: #f97316;
+      --font-score: 'Bebas Neue', 'Impact', sans-serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .header {
+      padding: 2rem 2.5rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .breadcrumb {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+    .breadcrumb a { color: var(--accent); text-decoration: none; opacity: 0.85; }
+    .title {
+      font-family: var(--font-score);
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+      line-height: 1.05;
+      margin-bottom: 0.25rem;
+    }
+    .date-line {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    .meta-strip {
+      display: flex;
+      gap: 2rem;
+      padding: 1rem 2.5rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+      flex-wrap: wrap;
+    }
+    .meta-item { display: flex; flex-direction: column; gap: 0.2rem; }
+    .meta-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+    }
+    .meta-value {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+    .meta-value.grade { color: var(--accent); font-size: 1rem; }
+    .meta-value.p0-clean { color: #4ade80; }
+    .meta-value.p0-open  { color: #f87171; }
+
+    .content {
+      max-width: 860px;
+      padding: 2rem 2.5rem 5rem;
+    }
+
+    h2 { font-family: var(--font-score); font-size: 1.3rem; font-weight: 400; letter-spacing: 0.02em; color: var(--accent); margin: 2rem 0 0.6rem; }
+    h3 { font-family: var(--font-mono); font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); margin: 1.25rem 0 0.5rem; }
+    h4 { font-size: 0.95rem; color: var(--text); margin: 1rem 0 0.35rem; }
+    p  { color: var(--text-dim); font-size: 0.9rem; line-height: 1.7; margin: 0.5rem 0; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+    ul { list-style: none; padding: 0; margin: 0.5rem 0; }
+    li { color: var(--text-dim); font-size: 0.88rem; line-height: 1.6; padding: 0.15rem 0 0.15rem 1rem; position: relative; }
+    li::before { content: "·"; position: absolute; left: 0; color: var(--text-muted); }
+    strong { color: var(--text); font-weight: 600; }
+    em { color: var(--text-dim); font-style: italic; }
+    code {
+      font-family: var(--font-mono);
+      font-size: 0.8em;
+      background: var(--surface-2);
+      color: var(--accent);
+      padding: 0.1em 0.4em;
+      border-radius: 3px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin: 0.75rem 0 1.25rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-dim);
+    }
+    th { color: var(--text-muted); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 400; }
+    tr:hover td { background: var(--surface); }
+
+    .footer {
+      padding: 1.5rem 2.5rem;
+      border-top: 1px solid var(--border);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="breadcrumb">
+    <a href="/design-scans">Design Scans</a> / Venture
+  </div>
+  <div class="title">Design Scan</div>
+  <div class="date-line">2026-04-17</div>
+</div>
+
+<div class="meta-strip">
+  <div class="meta-item">
+    <div class="meta-label">Scan Date</div>
+    <div class="meta-value">2026-04-17</div>
+  </div>
+  
+  
+  
+</div>
+
+<div class="content">
+<h2>Launchkit — Design Scan 2026-04-17</h2>
+<p><strong>Date</strong>: 2026-04-17  </p>
+<p><strong>Venture stage</strong>: Build  </p>
+<p><strong>Inversion layer</strong>: Infrastructure (product launch orchestration — narrative + visual identity)  </p>
+<p><strong>Files scanned</strong>: launchkit-summary.html  </p>
+<p><strong>Changes since last scan</strong>: No changes detected in launchkit-summary.html.</p>
+<hr>
+<h3>Accessibility</h3>
+<h4>Font Sizes</h4>
+<p><strong>P0 — CARRIED FROM 2026-04-16 — NOT RESOLVED — 2nd cycle:</strong></p>
+<p>Inline-styled &quot;Design Scan&quot; button in topbar still at <code>font-size:0.65rem</code> (line 278). This is a trivial one-line fix that has been carried for 2 cycles.</p>
+<p>```</p>
+<p>launchkit-summary.html:278  →  font-size:0.65rem  →  fix to 0.7rem</p>
+<p>```</p>
+<p>No other font-size regressions. No new violations detected.</p>
+<h4>Contrast &amp; Color</h4>
+<ul>
+<li>Green <code>#22c55e</code>: high contrast. No concerns.</li>
+</ul>
+<h4>Semantic Markup</h4>
+<p>Hero-first single-scroll layout. No ARIA tab issues.</p>
+<hr>
+<h3>UX Patterns</h3>
+<h4>Cold-Start Narrative</h4>
+<p><strong>P1 — CARRIED FROM 2026-04-15 — NOT RESOLVED:</strong></p>
+<p>The tagline describes inputs (&quot;positioning, messaging, visual identity&quot;) but not the deliverable. A cold visitor doesn't know if Launchkit is a tool, template, or service.</p>
+<p><strong>Fix needed</strong>: One sentence describing the output. Example: &quot;Launchkit produces a brand narrative package — one brief, one visual system, zero ambiguity.&quot;</p>
+<hr>
+<h3>Security</h3>
+<p><strong>P2 — CARRIED FROM 2026-04-15 — NOT RESOLVED:</strong></p>
+<p>Pre-commit hook still not deployed in <code>launchkit/.git/hooks/</code>. All other 8 projects are covered. This is the only remaining gap.</p>
+<hr>
+<h3>Deployment</h3>
+<p>At Build stage; no active product deployment.</p>
+<hr>
+<h3>Recommendations</h3>
+<h4>P0 — Accessibility Violations</h4>
+<p>1. <strong>Inline topbar button font size</strong> (CARRIED FROM 2026-04-16 — 2nd cycle): Change <code>font-size:0.65rem</code> → <code>0.7rem</code> on line 278 of launchkit-summary.html. One line.</p>
+<h4>P1 — UX &amp; Feedback</h4>
+<p>2. <strong>Cold-start output clarity</strong> (CARRIED FROM 2026-04-15): Add one sentence describing the deliverable.</p>
+<h4>P2 — Debt &amp; Improvements</h4>
+<p>3. <strong>Pre-commit hook</strong> (CARRIED FROM 2026-04-15 — only remaining project): Deploy pre-commit hook to <code>launchkit/</code>. All other 8 projects are covered. One script call.</p>
+<hr>
+<h3>Resolved This Cycle</h3>
+<p>None.</p>
+<hr>
+<h3>Carried Forward</h3>
+<p><strong>CARRIED FROM 2026-04-16:</strong></p>
+<ul>
+<li>Inline button font size P0 — Unresolved. 2nd cycle.</li>
+</ul>
+<p><strong>CARRIED FROM 2026-04-15:</strong></p>
+<ul>
+<li>Cold-start output clarity P1 — Unresolved.</li>
+<li>Pre-commit hook P2 — Unresolved. Last project without it.</li>
+</ul>
+</div>
+
+<div class="footer">
+  Generated from docs/design-scans/2026-04-17-venture.md
+  · WS-design-scan
+</div>
+
+</body>
+</html>
